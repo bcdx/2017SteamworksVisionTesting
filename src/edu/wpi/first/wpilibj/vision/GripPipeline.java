@@ -10,6 +10,8 @@ import java.util.stream.Collectors;
 import java.util.HashMap;
 
 import edu.wpi.first.wpilibj.vision.VisionPipeline;
+import edu.wpi.first.wpilibj.CameraServer;
+import edu.wpi.cscore.UsbCamera;
 
 import org.opencv.core.*;
 import org.opencv.core.Core.*;
@@ -27,6 +29,8 @@ import org.opencv.objdetect.*;
 */
 public class GripPipeline implements VisionPipeline {
 
+	UsbCamera camera = new UsbCamera("USB Camera", 1);
+	
 	//Outputs
 	private Mat hslThresholdOutput = new Mat();
 	private ArrayList<MatOfPoint> findContoursOutput = new ArrayList<MatOfPoint>();
